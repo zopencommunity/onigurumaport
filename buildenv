@@ -1,9 +1,12 @@
+# bump: oniguruma-version /ONIGURUMA_VERSION="(.*)"/ https://github.com/kkos/oniguruma.git|semver:*
+ONIGURUMA_VERSION="6.9.8"
+
+export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_STABLE_URL="https://github.com/kkos/oniguruma.git"
 export ZOPEN_STABLE_DEPS="bash m4 libtool autoconf automake make curl gzip tar zoslib coreutils"
-export ZOPEN_STABLE_TAG="v6.9.8"
+export ZOPEN_STABLE_TAG="v${ONIGURUMA_VERSION}"
 export ZOPEN_DEV_URL="https://github.com/kkos/oniguruma.git"
 export ZOPEN_DEV_DEPS="bash m4 libtool autoconf automake make curl gzip tar zoslib coreutils"
-export ZOPEN_BUILD_LINE="STABLE"
 
 export ZOPEN_BOOTSTRAP="./autogen.sh"
 
@@ -44,7 +47,5 @@ ZZ
 
 zopen_get_version()
 {
-  # Modify to echo the version of your tool/library
-  # Rather than hardcoding the version, obtain the version by running the tool/library
-  echo "1.0.0"
+  echo "$ONIGURUMA_VERSION"
 }
