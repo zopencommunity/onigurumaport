@@ -2,6 +2,7 @@
 ONIGURUMA_VERSION="6.9.9"
 
 export ZOPEN_BUILD_LINE="STABLE"
+export ZOPEN_CATEGORIES="library"
 export ZOPEN_STABLE_URL="https://github.com/kkos/oniguruma.git"
 export ZOPEN_STABLE_DEPS="bash m4 libtool autoconf automake make curl gzip tar zoslib coreutils"
 export ZOPEN_STABLE_TAG="v${ONIGURUMA_VERSION}"
