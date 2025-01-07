@@ -1,5 +1,5 @@
 # bump: oniguruma-version /ONIGURUMA_VERSION="(.*)"/ https://github.com/kkos/oniguruma.git|semver:*
-ONIGURUMA_VERSION="6.9.9"
+ONIGURUMA_VERSION="6.9.10"
 
 export ZOPEN_BUILD_LINE="STABLE"
 export ZOPEN_CATEGORIES="library"
