@@ -1,0 +1,14 @@
+diff --git a/src/regexec.c b/src/regexec.c
+index ddec265..57eae98 100644
+--- a/src/regexec.c
++++ b/src/regexec.c
+@@ -4932,6 +4932,9 @@ onig_regset_search(OnigRegSet* set, const UChar* str, const UChar* end,
+   OnigMatchParam* mp;
+   OnigMatchParam** mps;
+ 
++  if (set->n == 0)
++    return ONIG_MISMATCH;
++
+   mps = (OnigMatchParam** )xmalloc((sizeof(OnigMatchParam*) + sizeof(OnigMatchParam)) * set->n);
+   CHECK_NULL_RETURN_MEMERR(mps);
+ 
