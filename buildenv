@@ -17,11 +17,14 @@ zopen_check_results()
   pfx="$2"
   chk="$1/$2_check.log"
 
-  # Echo the following information to gauge build health
-  echo "actualFailures:0"
-  echo "totalTests:1"
-  echo "expectedFailures:0"
-  echo "expectedTotalTests:1"
+  failures=$(egrep '^# FAIL:|^# ERROR:|^# XFAIL' ${chk} | awk '{sum+=$3;} END{print sum;}')
+  totalTests=$(egrep '^# ERROR:|^# PASS:|^# XFAIL:|^# FAIL:|^# XPASS:' ${chk} | awk '{sum+=$3;} END{print sum;}')
+
+cat <<ZZ
+actualFailures:$failures
+totalTests:$totalTests
+expectedFailures:1
+ZZ
 }
 
 zopen_append_to_env()
